@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+:root {
+  --color-border: 1px solid white;
+}
+/* general */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", solid sans-serif; /* change fonts to all text */
+  height: 100vh;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+a {
+  text-decoration: none; /* remove text decoration */
+  color: white; /* change text color to white */
+  transition-duration: none;
+}
+
+/* border color */
+.navigation__header ul li {
+  border: var(--color-border);
+  transition-duration: none;
+}
+
+.logo__header a {
+  border: var(--color-border);
+  transition-duration: 800ms;
+}
+
+/* logo div in header */
+.logo__header {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  float: left;
+  left: 0;
+  padding: 25px;
+}
+
+/* text in logo div */
+.logo__header a {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+
+/* burger navigation */
+.fa-bars {
+  position: fixed;
+  z-index: 1;
+  color: brown;
+  float: right;
+  right: 0;
+  padding: 25px;
+}
+/* navigation */
+.navigation__header {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  float: right;
+  right: 0;
+  padding-right: 25px;
+}
+/* unordered list in navigation */
+.navigation__header ul {
+  display: inline-block;
+  list-style: none;
+  padding-right: 25px;
+  padding-top: 25px;
+}
+/* list item in navigation */
+.navigation__header ul li {
+  float: right;
+  padding: 5px;
+}
+
+/* sections */
+
+.section__fullpage {
+  width: 100%;
+  height: 100%;
+  /*overflow-y: scroll;*/ /* problem with window.onscroll js -- dosen't work --*/
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+.section__home {
+  background-color: black;
+}
+
+.section__home h1 {
+  font-size: 1.8rem;
+}
+.section__about {
+}
+.section__portfolio {
+}
+.section__skills {
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff6363;
+  font-weight: bold;
+}
+
+/* media minimal width 1025px */
+@media screen and (min-width: 1025px) {
+  .navigation__header {
+    visibility: visible;
+  }
+  .navigation__header ul li,
+  .logo__header a,
+  a {
+    transition-duration: 800ms;
+  }
+  .section__home h1 {
+    font-size: 4rem;
+  }
+  .fa-bars {
+    display: none;
+  }
+}
