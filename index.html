@@ -16,36 +16,35 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
     <link rel="stylesheet" href="style.css" />
     <!-- END STYLES -->
   </head>
 
   <body>
     <!-- start header navigation -->
-    <header>
-      <div class="logo__header"><a href="#home">LOGO</a></div>
+    <header id="header">
       <!-- logo navigation-->
-      <i class="fa fa-bars fa-3x" id="open-fa"></i>
-      <!-- burger -->
+      <a href="#home" class="logo">LOGO</a>
+      <div id="toggle"></div>
+      <!-- <i class="fa fa-bars fa-3x" id="open-fa"></i> -->
 
       <!-- start navigation links -->
-      <nav class="navigation__header">
+      <nav id="navbar">
         <ul>
-          <li><a href="#about">ABOUT</a></li>
           <!-- link to the section home -->
+          <li><a href="#about">ABOUT</a></li>
         </ul>
         <ul>
-          <li><a href="#portfolio">WORK</a></li>
           <!-- link to the section portfolio -->
+          <li><a href="#portfolio">WORK</a></li>
         </ul>
         <ul>
-          <li><a href="#skills">SKILLS</a></li>
           <!-- link to the section skills -->
+          <li><a href="#skills">SKILLS</a></li>
+        </ul>
+        <ul>
+          <!-- link to the section skills -->
+          <li><a href="#skills">CONTACT</a></li>
         </ul>
       </nav>
       <!-- end navigation links -->
@@ -53,41 +52,43 @@
     <!-- end header navigation -->
 
     <!-- start sections into page -->
-    <div class="section__fullpage" id="fullpage">
-      <!-- start home section -->
-      <div class="section section__home" id="home">
-        <!-- title home section -->
-        <h1 class="home__title" style="color: white">
-          MATEUSZ<span style="color: #ff6363">/</span>POTOCKI
-        </h1>
-      </div>
-      <!-- end home section -->
 
-      <!-- start about section -->
-      <div class="section section__about" id="about">
-        <!-- title about section -->
-        <h1 class="about__title">ABOUT</h1>
-      </div>
-      <!-- end about section -->
+    <!-- start home section -->
+    <section class="section__home" id="home">
+      <!-- title home section -->
+      <h1 class="home__title" style="color: black">
+        MATEUSZ<span style="color: #ff6363">/</span>POTOCKI
+      </h1>
+    </section>
+    <!-- end home section -->
 
-      <!-- start portfolio section -->
-      <div class="section section__portfolio" id="portfolio">
-        <!-- title portfolio section -->
-        <h1 class="portfolio__title">WORK</h1>
-      </div>
-      <!-- end portfolio section -->
+    <!-- start about section -->
+    <section class="section__about" id="about">
+      <!-- title about section -->
+      <h1 class="about__title">ABOUT</h1>
+      <p></p>
+    </section>
+    <!-- end about section -->
 
-      <!-- start skills section -->
-      <div class="section section__skills" id="skills">
-        <!-- title skills section -->
-        <h1 class="skills__title">SKILLS</h1>
-      </div>
-      <!-- end skills section -->
-    </div>
+    <!-- start portfolio section -->
+    <section class="section__portfolio" id="portfolio">
+      <!-- title portfolio section -->
+      <h1 class="portfolio__title">WORK</h1>
+    </section>
+    <!-- end portfolio section -->
+
+    <!-- start skills section -->
+    <section class="section__skills" id="skills">
+      <!-- title skills section -->
+      <h1 class="skills__title">SKILLS</h1>
+    </section>
+    <!-- end skills section -->
     <!-- end sections into page -->
   </body>
 
   <!-- SCRIPTS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
   <script src="script.js"></script>
+  <script src="test.js"></script>
 </html>
