@@ -1,55 +1,39 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
-/* general */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Raleway", solid sans-serif; /* change fonts to all text */
-  
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+
+  font-family: "Raleway", sans-serif;
 }
 
 body {
-  background-color: #fff;
-  height: 100vh;
-  overflow: scroll;
+  width: 100%;
 }
 
+a {
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #12334e;
+}
 header {
+  background-color: antiquewhite;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
   position: fixed;
-  top: 0;
-  right: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-  z-index: 1000;
-}
-
-.logo {
-  height: 60px;
-  line-height: 60px;
-  color: #12334e;
-  font-weight: 700;
-  font-size: 2em;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 20px;
 }
 
 #toggle {
+  background-color: #9051ff;
   position: absolute;
+  height: 60px;
+  width: 60px;
   top: 0;
   right: 0;
-  width: 60px;
-  height: 60px;
-  background: #9051ff;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -62,7 +46,7 @@ header {
   position: absolute;
   width: 28px;
   height: 2px;
-  background: #fff;
+  background-color: #fff;
   transform: translateY(-5px);
   transition: 0.2s;
 }
@@ -72,7 +56,7 @@ header {
   position: absolute;
   width: 28px;
   height: 2px;
-  background: #fff;
+  background-color: #fff;
   transform: translateY(5px);
   transition: 0.2s;
 }
@@ -84,60 +68,33 @@ header {
 #toggle.active::after {
   transform: translateY(0px) rotate(-45deg);
 }
-
 #toggle.active {
-  background: #f7226a;
+  background-color: #f7226a;
+}
+.logo {
+  line-height: 60px;
+  padding-left: 20px;
 }
 
 #navbar {
   height: 60px;
+  float: right;
   right: 60px;
-  width: 0px;
-  overflow: hidden;
   text-align: center;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-#navbar.active {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  padding-top: 50%;
-}
-
-#navbar.active ul {
-  display: flex;
-  flex-direction: column;
-}
-
-#navbar ul li {
+#navbar ul {
   list-style: none;
-}
-#navbar ul li a {
-  color: #12334e;
-  height: 60px;
+  display: inline-block;
   line-height: 60px;
-  text-decoration: none;
-  font-size: 1.8em;
-  padding: 0 15px;
-  letter-spacing: 2px;
+  padding-right: 20px;
 }
+
 section {
-  position: relative;
-  display: flex;
   height: 100vh;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 15vw;
-
-  scroll-snap-align: center;
-}
-
-.section__home h1 {
-  font-size: 20px;
-  text-align: center;
   justify-content: center;
 }
