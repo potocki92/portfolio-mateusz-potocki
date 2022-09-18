@@ -1,100 +1,155 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
+/* 
+=====================================
+            GENERAL
+=====================================
+*/
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
   font-family: "Raleway", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
   width: 100%;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #12334e;
 }
+/* 
+=====================================
+            HEADER
+=====================================
+*/
 header {
-  background-color: antiquewhite;
+  background-color: aliceblue;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-  position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  height: 70px;
 }
-
-#toggle {
-  background-color: #9051ff;
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.2s;
-}
-
-#toggle::before {
-  content: "";
-  position: absolute;
-  width: 28px;
-  height: 2px;
-  background-color: #fff;
-  transform: translateY(-5px);
-  transition: 0.2s;
-}
-
-#toggle::after {
-  content: "";
-  position: absolute;
-  width: 28px;
-  height: 2px;
-  background-color: #fff;
-  transform: translateY(5px);
-  transition: 0.2s;
-}
-
-#toggle.active::before {
-  transform: translateY(0px) rotate(45deg);
-}
-
-#toggle.active::after {
-  transform: translateY(0px) rotate(-45deg);
-}
-#toggle.active {
-  background-color: #f7226a;
-}
+/* 
+=====================================
+            LOGO
+=====================================
+*/
 .logo {
-  line-height: 60px;
-  padding-left: 20px;
+  position: fixed;
+  padding: 20px;
+  font-size: 2rem;
+  z-index: 1;
+}
+/* 
+=====================================
+            NAVBAR
+=====================================
+*/
+.navbar {
+  position: fixed;
+  float: right;
+  right: 10px;
 }
 
-#navbar {
-  height: 60px;
+.navbar ul {
+  list-style: none;
+  line-height: 50px;
+}
+
+.navbar ul li {
+  display: inline-block;
+  padding: 10px;
+}
+/* 
+=====================================
+            ICONS BURGER
+=====================================
+      OPEN BURGER ICON ACTIVATE
+=====================================
+*/
+.fa-bars {
+  display: none;
+  color: #212529;
   float: right;
-  right: 60px;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+/* 
+=====================================
+            ICONS BURGER
+=====================================
+      CLOSE BURGER ICON ACTIVATE
+=====================================
+*/
+.fa-times {
+  display: none;
+  color: #212529;
+  float: right;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+/* 
+=====================================
+            SECTIONS
+=====================================
+*/
+section {
+  height: 100vh;
+  display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-#navbar ul {
-  list-style: none;
-  display: inline-block;
-  line-height: 60px;
-  padding-right: 20px;
-}
+/* 
+=====================================
+          RESPONSIVE MEDIA 
+=====================================
+*/
+@media (max-width: 500px) {
+  .navbar {
+    background-color: aliceblue;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
-section {
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  .navbar ul {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .navbar ul li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fa-bars {
+    display: block;
+  }
 }
