@@ -1,38 +1,9 @@
-const header = document.getElementById("header");
-const toggle = document.getElementById("toggle");
-const navbar = document.getElementById("navbar");
-
-document.onclick = function (e) {
-  if (
-    e.target.id !== "header" &&
-    e.target.id !== "toggle" &&
-    e.target.id !== "navbar"
-  ) {
-    toggle.classList.remove("active");
-    navbar.classList.remove("active");
-  }
-};
-toggle.onclick = function () {
-  toggle.classList.toggle("active");
-  navbar.classList.toggle("active");
-};
-
-// switch color between screen position
-
-$(function () {
-  $(window).scroll(function () {
-    var top = window.scrollY;
-    if (top >= 100) {
-      // $("a").css("color", "black");
-      // $("li").css("border", "1px solid black");
-      // $(".logo__header a").css("border", "1px solid black");
-    } else {
-      //   $("a").css("color", "white");
-      //   $("li").css("border", "1px solid white");
-      //   $(".logo__header a").css("border", "1px solid white");
-    }
-  });
-});
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelector('.fa-bars').addEventListener('click', () => {
+    document.querySelector('body').classList.toggle('toggled');
+    console.log('ssss');
+  })
+})
 
 // smooth scroll - jQuery
 
