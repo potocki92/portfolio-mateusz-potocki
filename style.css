@@ -6,26 +6,27 @@
 =====================================
 */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
 
-html {
-  font-size: 62.5%;
+:root {
+  --body-color: #e4e9f7;
+  --nav-color: #4070f4;
+  --side-nav: #010718;
+  --text-color: #fff;
+  --search-bar: #f2f2f2;
+  --search-text: #010718;
 }
 
 body {
-  width: 100%;
   height: 100vh;
+  background-color: var(--body-color);
 }
 
-ul {
-  list-style: none;
-}
-
-a {
+.header__achron {
   text-decoration: none;
 }
 /* 
@@ -33,44 +34,99 @@ a {
             HEADER
 =====================================
 */
+
 .header {
   position: fixed;
-  background-color: aliceblue;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 70px;
+  width: 100%;
+  background-color: var(--nav-color);
+}
+
+.header .header__logo {
+  background-color: aqua;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  float: left;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.header .header__navbar {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header .header__navbar .header__list {
+  padding: 2em;
+  list-style: none;
+}
+
+.header .header__navbar .header__list .header__link {
+  padding: 10px;
+}
+.header .header__navbar .header__list .header__link .header__achron {
+  color: #000;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 /* 
 =====================================
             LOGO
 =====================================
 */
-.header__logo {
-  position: fixed;
-  padding-top: 20px;
-  padding-left: 20px;
-  font-size: 2rem;
-  z-index: 1;
-}
+
 /* 
 =====================================
             NAVBAR
 =====================================
 */
-.header__navbar {
+
+.burger {
   position: fixed;
-  float: right;
+  top: 0;
   right: 0;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
 }
 
-.header__list {
-  list-style: none;
-  line-height: 50px;
+.burger__icon {
+  top: 50%;
+  left: 10%;
+  width: 50px;
+  height: 6px;
+  background-color: #010718;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
 }
 
-.header__link {
-  display: inline-block;
-  padding: 10px;
+.burger__icon::after,
+.burger__icon::before {
+  top: 15px;
+  content: "";
+  width: 50px;
+  height: 6px;
+  background-color: #010718;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.burger__icon::before {
+  top: -15px;
 }
 
 /*
@@ -79,31 +135,11 @@ a {
 =====================================
 */
 
-.header__achron {
-  /* WITHOUT position:relative ANIMATE REDLINE DOSEN'T WORK */
-  position: relative;
-}
-
 /*****************************************
 SHOW ANIMATE RED-LINE (FROM LEFT TO RIGHT)
 UNDER ARCHONS AFTER HOVER THE MOUSE
 *****************************************/
 
-.header__achron::after {
-  content: "";
-  width: 0;
-  height: 2px;
-  position: absolute;
-  bottom: -4px;
-  right: 0; /* to right */
-  background: #f38181;
-  transition: width 0.3s, left 0.3s;
-}
-
-.header__achron:hover::after {
-  width: 100%;
-  left: 0; /* from left */
-}
 /* 
 =====================================
             ICONS BURGER
@@ -111,45 +147,13 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
       OPEN BURGER ICON ACTIVATE
 =====================================
 */
-.fa-bars {
-  display: none;
-  color: #212529;
-  float: right;
-  padding: 20px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-  background-color: aliceblue;
-  
-  z-index: 100;
-}
+
 /* 
 =====================================
-            ICONS BURGER
-=====================================
-      CLOSE BURGER ICON ACTIVATE
+            TOGGLED
 =====================================
 */
-.fa-times {
-  display: none;
-  color: #212529;
-  float: right;
-  padding: 20px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-  background-color: aliceblue;
-}
 
-.toggled nav.header__navbar {
-  display: block;
-  z-index: 10;
-  transform: scale(1);
-  opacity: 1;
-  transition: all 0.5s ease;
-}
 /* 
 =====================================
             SECTIONS
@@ -161,6 +165,7 @@ section {
   text-align: center;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease;
 }
 
 /* 
@@ -168,28 +173,3 @@ section {
           RESPONSIVE MEDIA 
 =====================================
 */
-@media (max-width: 700px) {
-  .header__navbar {
-    background-color: aliceblue;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .header__list {
-    font-size: 2rem;
-    font-weight: 400;
-  }
-
-  .header__link {
-    display: block;
-  }
-
-  .fa-bars {
-    display: block;
-  }
-}

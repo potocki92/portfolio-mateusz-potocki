@@ -1,9 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelector('.fa-bars').addEventListener('click', () => {
-    document.querySelector('body').classList.toggle('toggled');
-    console.log('ssss');
-  })
-})
+
 
 // smooth scroll - jQuery
 
