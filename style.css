@@ -16,27 +16,53 @@ body {
   height: 100%;
 }
 
-a,
-a:visited,
-a:focus,
-a:active,
-a:link {
+/**********
+* archons *
+**********/
+.header__achron,
+.header__achron:visited,
+.header__achron:focus,
+.header__achron:active,
+.header__achron:link {
   text-decoration: none;
   outline: 0;
 }
 
-a {
+.header__achron {
   color: currentColor;
   transition: 0.2s ease-in-out;
 }
 
+/*
+===================================
+      SECTIONS SMOOTH SCROLL
+===================================
+*/
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+/***********************
+* remove style from li *
+***********************/
 .header__list {
   padding: 0;
   list-style: none;
 }
-/* =========
-VARIABLES
-========= */
+
+/* 
+=====================================
+            VARIABLES
+=====================================
+*/
+
 :root {
   --offset-value: 30;
   --btn-size: 60;
@@ -45,7 +71,7 @@ VARIABLES
 
 /* 
 =====================================
-            HEADER
+              HEADER
 =====================================
 */
 
@@ -53,6 +79,12 @@ VARIABLES
   position: fixed;
   z-index: 500;
 }
+
+/* 
+=====================================
+              LOGO
+=====================================
+*/
 
 .header .header__logo {
   background-color: aqua;
@@ -70,16 +102,13 @@ VARIABLES
 
 /* 
 =====================================
-            LOGO
+              NAVBAR
 =====================================
 */
 
-/* 
-=====================================
-            NAVBAR
-=====================================
-*/
-
+/************************
+* create navigation bar *
+************************/
 .header__navbar {
   width: 100%;
   height: 100%;
@@ -92,12 +121,21 @@ VARIABLES
   pointer-events: none;
 }
 
+/***********************
+* <ul> from navigation *
+***********************/
 .header__navbar .header__list {
   margin: auto;
   pointer-events: auto;
   text-align: center;
 }
 
+/*********************************
+* <li> from navigation           *
+* <li> are hidden.               *
+* Show them only when user click *
+* and open the navigation button *
+*********************************/
 .header__navbar .header__link {
   font-size: 30px;
   color: #212121;
@@ -109,10 +147,19 @@ VARIABLES
   opacity: 0.0001;
 }
 
+/***********************************************************
+* setting margin to the first neighborhood from first <li> *
+***********************************************************/
 .header__navbar .header__link + .header__link {
   margin-top: 30px;
 }
 
+/*****************************
+* <li> from navigation       *
+* After click and open the   *
+* navigation button <li> now *
+* are visible                *
+*****************************/
 .shown .header__navbar .header__link {
   transform: none;
   opacity: 1;
@@ -120,33 +167,49 @@ VARIABLES
   transition: 0.35s cubic-bezier(0.4, 2.08, 0.55, 1);
 }
 
+/******************************************************************
+* Appearance first <li> with archon (HOME) after click the button *
+******************************************************************/
 .shown .header__navbar .header__link:nth-child(1) {
   transition-delay: 0.15s;
 }
-
+/*******************************************************************
+* Appearance second <li> with archon (WORK) after click the button *
+*******************************************************************/
 .shown .header__navbar .header__link:nth-child(2) {
   transition-delay: 0.125s;
 }
-
+/********************************************************************
+* Appearance third <li> with archon (SKILLS) after click the button *
+********************************************************************/
 .shown .header__navbar .header__link:nth-child(3) {
   transition-delay: 0.1s;
 }
-
+/**********************************************************************
+* Appearance fourth <li> with archon (CONTACT) after click the button *
+**********************************************************************/
 .shown .header__navbar .header__link:nth-child(4) {
   transition-delay: 0.075s;
 }
+
 /*
 =====================================
             LINK EFFECT
 =====================================
 */
 
+/**********
+* archons *
+**********/
 .header__achron {
   position: relative;
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/********************************
+* create effect green-line from *
+********************************/
 .header__achron::before,
 .header__achron::after {
   position: absolute;
@@ -158,36 +221,39 @@ VARIABLES
   transition: transform 0.3s cubic-bezier(0.5, 0.5, 0, 1);
 }
 
+/************************************************************
+* close effect green-line from archons (from right to left) *
+************************************************************/
 .header__achron::before {
   left: 0;
   transform: translateX(calc(-100% - 10px)) scaleX(0);
   transform-origin: left;
 }
+
+/************************************************************
+* close effect green-line from archons (from left to right) *
+************************************************************/
 .header__achron::after {
   right: 0;
   transform: translateX(calc(100% + 10px)) scaleX(0);
   transform-origin: right;
 }
 
+/************************************************************
+* start effect green-line from archons (from right to left) *
+************************************************************/
 .header__achron:hover:before {
   transform: translateX(calc(-100% - 10px)) scaleX(1);
   transform-origin: right;
 }
 
+/************************************************************
+* start effect green-line from archons (from left to right) *
+************************************************************/
 .header__achron:hover:after {
   transform: translateX(calc(100% + 10px)) scaleX(1);
   transform-origin: left;
 }
-/*
-=====================================
-    UNDERLINE COLOR NAVBAR LINKS
-=====================================
-*/
-
-/*****************************************
-SHOW ANIMATE RED-LINE (FROM LEFT TO RIGHT)
-UNDER ARCHONS AFTER HOVER THE MOUSE
-*****************************************/
 
 /*
 =====================================
@@ -209,6 +275,9 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
 =====================================
 */
 
+/*************************
+* main button appearance *
+*************************/
 .burger {
   position: fixed;
   height: calc(var(--btn-size) * 1px);
@@ -227,6 +296,9 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/********************************************
+* parent container which contains all spans *
+********************************************/
 .burger__icon {
   display: flex;
   flex-direction: column;
@@ -237,19 +309,26 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
   transition: transform 0.3s;
 }
 
+/*******************************************
+* setting margin and position to all spans *
+*******************************************/
 .burger__icon span {
   position: relative;
   width: 100%;
-}
 
-.burger__icon span {
   margin-top: -4px;
 }
 
+/***********************************************************
+* setting margin to the first neighborhood from first span *
+***********************************************************/
 .burger__icon span + span {
   margin-top: 8px;
 }
 
+/*************************************************
+* span appearance(color, size, position, effect) *
+*************************************************/
 .burger__icon span:before,
 .burger__icon span:after {
   content: "";
@@ -264,49 +343,75 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
   transform-origin: center center;
 }
 
+/***********************************
+* to rounded ends of the left span *
+***********************************/
 .burger__icon span:before {
   left: 0;
   border-radius: 3px 0 0 3px;
 }
 
+/************************************
+* to rounded ends of the right span *
+************************************/
 .burger__icon span:after {
   right: 0;
   border-radius: 0 3px 3px 0;
 }
 
+/***********************
+* rotate top-left span *
+***********************/
 .shown span:nth-of-type(1):before {
   transform: translate3d(3px, 3.5px, 0) rotate(45deg);
 }
 
+/************************
+* rotate top-right span *
+************************/
 .shown span:nth-of-type(1):after {
   transform: translate3d(-3px, 3.5px, 0) rotate(-45deg);
 }
 
+/**************************
+* rotate bottom-left span *
+**************************/
 .shown span:nth-of-type(3)::before {
   transform: translate3d(3px, -3.5px, 0) rotate(-45deg);
 }
 
+/***************************
+* rotate bottom-right span *
+***************************/
 .shown span:nth-of-type(3)::after {
   transform: translate3d(-3px, -3.5px, 0) rotate(45deg);
 }
+
+/******************************************
+* hide middle span after click the button *
+******************************************/
 .shown span:nth-last-of-type(2)::before,
 .shown span:nth-last-of-type(2)::after {
   opacity: 0.0001;
 }
 
+/***********************************************
+* "tearing" effect the middle span (left side) *
+***********************************************/
 .shown span:nth-last-of-type(2)::before {
   transform: translateX(-200%);
 }
 
+/************************************************
+* "tearing" effect the middle span (right side) *
+************************************************/
 .shown span:nth-last-of-type(2)::after {
   transform: translateX(200%);
 }
 
-.shown::before {
-  transform: scale(0.6);
-  transition: 0.2s;
-}
-
+/*************************************
+* shadow effect of the burger button *
+*************************************/
 .burger__icon::before {
   content: "";
   transition: 0.2s 0.2s;
@@ -321,6 +426,9 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
   z-index: -2;
 }
 
+/******************************
+* button's color and position *
+******************************/
 .burger__icon::after {
   content: "";
   position: absolute;
@@ -332,11 +440,13 @@ UNDER ARCHONS AFTER HOVER THE MOUSE
   background: #fafafa;
   z-index: -1;
 }
+
 /* 
 =====================================
             SECTIONS
 =====================================
 */
+
 section {
   height: 100vh;
   display: flex;
@@ -346,6 +456,9 @@ section {
   transition: all 0.5s ease;
 }
 
+/**************************************
+* first section's page (home section) *
+**************************************/
 #home {
   position: relative;
   font-weight: 600;
@@ -353,6 +466,7 @@ section {
   width: 100%;
   background: linear-gradient(to top right, #4eca78, #d0db68);
 }
+
 /* 
 =====================================
           RESPONSIVE MEDIA 
