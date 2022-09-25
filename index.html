@@ -7,6 +7,11 @@
     <title>Document</title>
 
     <!-- START STYLES -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
@@ -16,6 +21,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="slider-style.css" />
     <link rel="stylesheet" href="style.css" />
     <!-- END STYLES -->
   </head>
@@ -25,7 +31,9 @@
     <header class="header">
       <!-- logo navigation-->
       <div class="header__logo">
-        <a href="#home" class="header__achron">LOGO</a>
+        <a href="#home" class="header__achron"
+          >MATEUSZ<span style="color: #ff6363">/</span>POTOCKI</a
+        >
       </div>
       <!-- start navigation links -->
       <nav class="header__navbar" role="navigation">
@@ -65,24 +73,89 @@
     <!-- start home section -->
     <section class="section" id="home">
       <!-- title home section -->
-      <h1 class="section__title" style="color: black">
-        MATEUSZ<span style="color: #ff6363">/</span>POTOCKI
-      </h1>
+      <div class="section__home">
+        <div class="section__text">
+          <h1 class="section__title" style="color: black">
+            MATEUSZ<span style="color: #ff6363">/</span>POTOCKI
+          </h1>
+          <p class="section__paragraf">FULL STACK WEB-DEVELOPER</p>
+        </div>
+      </div>
     </section>
     <!-- end home section -->
 
     <!-- start about section -->
     <section class="section" id="about">
       <!-- title about section -->
-      <h1 class="section__title">ABOUT</h1>
-      <p></p>
+      <div class="section__about">
+        <div class="section__text">
+          <h1 class="section__title">ABOUT</h1>
+          <p class="section__paragraf">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
     </section>
     <!-- end about section -->
 
     <!-- start portfolio section -->
     <section class="section" id="portfolio">
-      <!-- title portfolio section -->
-      <h1 class="section__title">WORK</h1>
+      <div class="section__portfolio">
+        <div class="section__text">
+          <!-- title portfolio section -->
+          <h1 class="section__title">WORK</h1>
+        </div>
+        <div class="section__slider slider">
+          <img
+            class="slider__image"
+            id="before__image"
+            src="images/before.png"
+            alt="before image comparison"
+          />
+          <div class="slider__wrapper">
+            <img
+              class="slider__image"
+              id="after__image"
+              src="images/after.png"
+              alt="after image comparison"
+            />
+          </div>
+          <input
+            type="file"
+            name="file"
+            class="slider__inputfile"
+            id="before__file"
+          />
+          <label for="before__file" class="slider__label label__before"
+            >BEFORE</label
+          >
+
+          <input
+            type="file"
+            name="file"
+            class="slider__inputfile"
+            id="after__file"
+          />
+          <label for="after__file" class="slider__label label__after"
+            >AFTER</label
+          >
+          <div class="slider__handle">
+            <div class="slider__line"></div>
+            <div class="slider__circle">
+              <!-- font icon -->
+              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="slider__line"></div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- end portfolio section -->
 

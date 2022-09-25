@@ -87,16 +87,17 @@ section {
 */
 
 .header .header__logo {
-  width: 70px;
+  width: 200px;
   height: 70px;
-  position: fixed;
-  float: left;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: translate(-50% -50%);
+}
+
+.header .header__logo .header__achron {
+  font-size: 20px;
 }
 
 /* 
@@ -382,13 +383,28 @@ section {
 =====================================
 */
 
-section {
+.section {
   height: 100vh;
-  display: flex;
+  flex-flow: column;
   text-align: center;
   justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease;
+  position: relative;
+}
+
+.section__title {
+  font-size: 4.5rem;
+}
+.section__text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.section__paragraf {
+  color: #000;
+  font-weight: 100;
+  font-size: 2rem;
 }
 
 /**************************************
@@ -427,8 +443,8 @@ section {
   /********************************
   * create effect green-line from *
   ********************************/
-  .header__achron::before,
-  .header__achron::after {
+  .header__navbar .header__list .header__link .header__achron::before,
+  .header__navbar .header__list .header__link .header__achron::after {
     position: absolute;
     content: "";
     height: 3px;
@@ -441,7 +457,7 @@ section {
   /************************************************************
   * close effect green-line from archons (from right to left) *
   ************************************************************/
-  .header__achron::before {
+  .header__navbar .header__list .header__link .header__achron::before {
     left: 0;
     transform: translateX(calc(-100% - 10px)) scaleX(0);
     transform-origin: left;
@@ -450,7 +466,7 @@ section {
   /************************************************************
   * close effect green-line from archons (from left to right) *
   ************************************************************/
-  .header__achron::after {
+  .header__navbar .header__list .header__link .header__achron::after {
     right: 0;
     transform: translateX(calc(100% + 10px)) scaleX(0);
     transform-origin: right;
@@ -459,7 +475,7 @@ section {
   /************************************************************
   * start effect green-line from archons (from right to left) *
   ************************************************************/
-  .header__achron:hover:before {
+  .header__navbar .header__list .header__link .header__achron:hover:before {
     transform: translateX(calc(-100% - 10px)) scaleX(1);
     transform-origin: right;
   }
@@ -467,9 +483,32 @@ section {
   /************************************************************
   * start effect green-line from archons (from left to right) *
   ************************************************************/
-  .header__achron:hover:after {
+  .header__navbar .header__list .header__link .header__achron:hover:after {
     transform: translateX(calc(100% + 10px)) scaleX(1);
     transform-origin: left;
+  }
+
+  /*****************************
+  * line under achrons in logo * 
+  *****************************/
+  .header .header__logo .header__achron::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #4eca78;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  /**************************************************
+  * show underline achrons in logo after hover this * 
+  **************************************************/
+  .header .header__logo .header__achron:hover::before {
+    transform: scaleX(1);
   }
 }
 
@@ -497,7 +536,7 @@ section {
   * size reduction of navbar header *
   ***********************************/
   .header__navbar {
-    width: 20%;
+    width: 280px;
     height: 70px;
     position: absolute;
     right: 0;
@@ -515,12 +554,19 @@ section {
     font-size: 15px;
   }
 
+  /******************************************
+  * thanks to this underline is only achron *
+  * links not not all header navigation     *
+  ******************************************/
   .header__achron {
     position: relative;
     color: #000;
     text-decoration: none;
   }
 
+  /*********************
+  * line under achrons * 
+  *********************/
   .header__achron::before {
     content: "";
     position: absolute;
@@ -533,7 +579,9 @@ section {
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
-
+  /************************************
+  * show underline after hover a link *
+  ************************************/
   .header__achron:hover::before {
     transform: scaleX(1);
   }
