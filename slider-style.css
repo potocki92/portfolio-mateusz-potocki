@@ -1,0 +1,115 @@
+:root {
+  --container-width: min(80vw, 768px);
+  --container-handle-width: 50px;
+}
+
+.slider {
+  position: relative;
+  width: var(--container-width);
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
+}
+
+.slider__image {
+  display: block;
+  width: var(--container-width);
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slider__wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.slider__wrapper .slider__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.slider__inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.slider__label {
+  position: absolute;
+  top: 1rem;
+  z-index: 3;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.33);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+  letter-spacing: 1px;
+  user-select: none;
+  opacity: 0;
+  transition: 0.25s cubic-bazier(0.68, 0.26, 0.58, 1.22);
+}
+
+.slider:hover .slider__label {
+  opacity: 1;
+}
+
+.slider .slider__label.label__before {
+  left: 1rem;
+}
+
+.slider .slider__label.label__after {
+  right: 1rem;
+  background-color: red;
+}
+
+.slider__handle {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--container-handle-width) / 2);
+  width: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-selected: none;
+  z-index: 2;
+}
+
+.slider__line {
+  width: 2px;
+  flex-grow: 1;
+  background-color: #fff;
+}
+
+.slider__circle {
+  height: var(--container-handle-width);
+  width: var(--container-handle-width);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-width: 90vw;
+  }
+}

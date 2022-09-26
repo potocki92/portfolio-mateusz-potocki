@@ -390,10 +390,33 @@ section {
   justify-content: center;
   position: relative;
 }
+/***************
+* 
+*/
+.section__portfolio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__h2 {
+  position: absolute;
+  font-size: 1.3em;
+  bottom: 15%;
+}
+.section__portfolio .section__text {
+  position: absolute;
+  top: 17.5%;
+}
 
 .section__title {
   font-size: 4.5rem;
 }
+
 .section__text {
   text-align: center;
   position: absolute;
