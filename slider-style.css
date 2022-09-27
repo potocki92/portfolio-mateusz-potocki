@@ -1,8 +1,22 @@
+/* 
+=====================================
+            VARIABLES
+=====================================
+*/
+
 :root {
   --container-width: min(80vw, 768px);
   --container-handle-width: 50px;
 }
 
+/* 
+=====================================
+        MAIN SLIDER CONTAINER
+=====================================
+*/
+/**********************************
+* main <div> with all slider tags *
+**********************************/
 .slider {
   position: relative;
   width: var(--container-width);
@@ -11,6 +25,9 @@
   box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
 }
 
+/*****************************
+* tag <img> with first image *
+*****************************/
 .slider__image {
   display: block;
   width: var(--container-width);
@@ -21,6 +38,9 @@
   user-select: none;
 }
 
+/**************************************************
+* tag <div> with <img> tag (this is second image) *
+**************************************************/
 .slider__wrapper {
   position: absolute;
   top: 0;
@@ -32,6 +52,9 @@
   transform: translateZ(0);
 }
 
+/******************************
+* tag <img> with second image *
+******************************/
 .slider__wrapper .slider__image {
   position: absolute;
   top: 0;
@@ -39,6 +62,9 @@
   height: 100%;
 }
 
+/**************************
+* input to load own image *
+**************************/
 .slider__inputfile {
   width: 0.1px;
   height: 0.1px;
@@ -48,6 +74,9 @@
   z-index: -1;
 }
 
+/*****************
+* label to input *
+*****************/
 .slider__label {
   position: absolute;
   top: 1rem;
@@ -64,19 +93,31 @@
   transition: 0.25s cubic-bazier(0.68, 0.26, 0.58, 1.22);
 }
 
+/******************************
+* show label when mouse hover *
+******************************/
 .slider:hover .slider__label {
   opacity: 1;
 }
 
+/***********************************
+* move "label__befor" to left side *
+***********************************/
 .slider .slider__label.label__before {
   left: 1rem;
 }
 
+/*****************************************************
+* move "label__after" to right side and change color *
+*****************************************************/
 .slider .slider__label.label__after {
   right: 1rem;
   background-color: red;
 }
 
+/***********************************************
+* <div> responsible for line, circle and icons *
+***********************************************/
 .slider__handle {
   position: absolute;
   top: 0;
@@ -91,12 +132,18 @@
   z-index: 2;
 }
 
+/***************************************************
+* this line is in the center of comprarison slider *
+***************************************************/
 .slider__line {
   width: 2px;
   flex-grow: 1;
   background-color: #fff;
 }
 
+/******************************************************
+* this is a circle which is in the middle of the line *
+******************************************************/
 .slider__circle {
   height: var(--container-handle-width);
   width: var(--container-handle-width);
@@ -108,7 +155,16 @@
   justify-content: space-evenly;
 }
 
+/* 
+=====================================
+          RESPONSIVE MEDIA 
+=====================================
+*/
+
 @media (max-width: 768px) {
+  /***************************************************
+  * change container width when max-width is changed *
+  ***************************************************/
   :root {
     --container-width: 90vw;
   }
