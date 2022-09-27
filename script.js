@@ -1,3 +1,9 @@
+
+// initialize wow.js
+new WOW().init();
+
+// animate burger button
+
 const elem = document.querySelector('.burger__background'), 
       body = document.querySelector('body'),
       toggleBtn = document.querySelector('.burger__icon'),
@@ -53,8 +59,7 @@ calculateValues();
 toggleBtn.addEventListener('click', toggleMenu, false);
 window.addEventListener("resize", resizeHandler, false);
 
-// smooth scroll - jQuery
-
+// smooth scroll
 $("a").on("click", function (e) {
   if (this.hash !== "") {
     e.preventDefault();
@@ -69,3 +74,23 @@ $("a").on("click", function (e) {
     );
   }
 });
+
+
+// typing animation 
+
+$(document).ready(function () {
+  (function ($) {
+    $.fn.writeText = function (content) {
+      var contentArray = content.split(""),
+      current = 0,
+      elem = this;
+      setInterval(function () {
+        if (current < contentArray.length) {
+          elem.text(elem.text() + contentArray[current++]);
+        }
+      }, 50);
+    };
+  })(jQuery);
+
+  $("#holder").writeText("WEB DESIGNER + FRONT-END DEVELOPER");
+})

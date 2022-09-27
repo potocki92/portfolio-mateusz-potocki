@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!-- START STYLES -->
-
+    <link rel="stylesheet" href="animate.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
@@ -76,10 +76,12 @@
       <!-- title home section -->
       <div class="section__home">
         <div class="section__text">
-          <h1 class="section__title" style="color: black">
+          <h1 class="section__title animated fadeInDown" style="color: black">
             MATEUSZ<span style="color: #ff6363">/</span>POTOCKI
           </h1>
-          <p class="section__paragraf">FULL STACK WEB-DEVELOPER</p>
+          <p class="section__paragraph">
+            <span id="holder"></span><span class="blinking-cursor">|</span>
+          </p>
         </div>
       </div>
     </section>
@@ -90,8 +92,10 @@
       <!-- title about section -->
       <div class="section__about">
         <div class="section__text">
-          <h1 class="section__title">ABOUT</h1>
-          <p class="section__paragraph">
+          <h1 class="section__title wow fadeInDown" data-wow-delay="0.2s">
+            ABOUT
+          </h1>
+          <p class="section__paragraph wow fadeInDown" data-wow-delay="0.2s">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -110,7 +114,7 @@
       <div class="section__portfolio">
         <div class="section__text">
           <!-- title portfolio section -->
-          <h1 class="section__title">WORK</h1>
+          <h1 class="section__title wow fadeInDown" data-wow-delay="0.2s">WORK</h1>
         </div>
         <!-- start slider comparison -->
         <div class="section__slider slider">
@@ -168,7 +172,7 @@
       <div class="section__skills">
         <div class="section__text">
           <!-- title skills section -->
-          <h1 class="section__title">SKILLS</h1>
+          <h1 class="section__title wow fadeInDown" data-wow-delay="0.2s">SKILLS</h1>
         </div>
         <!-- start skills container -->
         <div class="skills">
@@ -227,7 +231,7 @@
       <!-- title contact section -->
       <div class="section__contact">
         <div class="section__text">
-          <h1 class="section__title">CONTACT</h1>
+          <h1 class="section__title wow fadeInDown" data-wow-delay="0.2s">CONTACT</h1>
         </div>
 
         <footer class="contact__footer">
@@ -246,6 +250,7 @@
   </body>
 
   <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
