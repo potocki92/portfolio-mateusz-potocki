@@ -427,7 +427,8 @@ section {
 * title for all sections *
 *************************/
 .section__title {
-  font-size: 4.5rem;
+  color: #ff6363;
+  font-size: 2rem;
 }
 
 /*********************************
@@ -447,9 +448,20 @@ section {
 .section__paragraph {
   color: #000;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
+/**********
+* contact *
+**********/
+.section__contact .section__text {
+  position: absolute;
+  top: 17.5%;
+}
+
+.section__contact {
+  display: block;
+}
 /* 
 =====================================
           FOOTER MEDIA   
@@ -561,6 +573,94 @@ section {
   background: linear-gradient(to top right, #4eca78, #d0db68);
 }
 
+/* 
+=====================================
+              FORMS 
+=====================================
+*/
+/***********************************************************
+* contact__form                                            *
+* top, left: 50% and transform  centres "form" into screen *
+***********************************************************/
+.contact__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+/***********************************************
+* all input with textarea into "contact__form" *
+***********************************************/
+.contact__form .form__input {
+  border: 1px solid #eee;
+  transition: .3s border-color;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 100%;
+  height: 3em;
+  font-size: 16px;
+  padding: 1em;
+  margin: 0.5em 0 2em 0;
+  font-weight: bold;
+  outline: none;
+}
+
+/****************************************************************
+* color and shadow border input__form when user hover the input *
+****************************************************************/
+.contact__form .form__input:hover {
+  border: 1px solid #aaa;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+/*********************************************
+* color input__form when user click the input *
+*********************************************/
+.contact__form .form__input:focus {
+  border: 1px solid #007bb6;
+  outline-color: #007bb6;
+  transition: .3s outline-color;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+/*********************
+* to only "textarea" *
+*********************/
+.contact__form textarea {
+  min-height: 10em;
+}
+
+/**************
+* button form *
+**************/
+.contact__form .form__button {
+  outline: none;
+  padding: 12px;
+  min-width: 200px;
+  border-radius: 2px;
+  border: 2px solid #ff6363;
+  text-align: center;
+  font-size: 1em;
+  color: #ff6363;
+  background-color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/********************
+* button form hover *
+********************/
+.contact__form .form__button:hover {
+  background-color: #ff6363;
+  color: white;
+  transition: all 0.3s ease-out;
+}
 /* 
 =====================================
           RESPONSIVE MEDIA 
@@ -727,5 +827,13 @@ section {
   ************************************/
   .header__achron:hover::before {
     transform: scaleX(1);
+  }
+
+  .section__title {
+    font-size: 4.5rem;
+  }
+
+  .section__paragraph {
+    font-size: 1.7rem;
   }
 }
