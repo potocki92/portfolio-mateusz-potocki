@@ -41,6 +41,8 @@
 * <div> with own skill name, color and percentage *
 **************************************************/
 .skills__outer {
+  
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
   position: relative;
   display: block;
   margin-bottom: 15px;

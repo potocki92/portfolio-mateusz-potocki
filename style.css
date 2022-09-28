@@ -410,8 +410,9 @@ section {
 * subtitle for works *
 *********************/
 .section__subtitle {
+  color: #484848;
   position: absolute;
-  font-size: 1.3em;
+  font-size: 1.1em;
   bottom: 15%;
 }
 
@@ -446,7 +447,7 @@ section {
 * under text paragraph *
 ***********************/
 .section__paragraph {
-  color: #000;
+  color: #484848;
   font-weight: 100;
   font-size: 1rem;
 }
@@ -471,19 +472,21 @@ section {
 * footer with all media direction *
 **********************************/
 .contact__footer {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   width: 100%;
-  padding: 50px 0px 70px 0px;
+  padding: 10px 0px 15px 0px;
   position: absolute;
   bottom: 0;
   align-items: center;
   text-align: center;
+  background-color: #484848;
 }
 
 /****************
 * media buttons *
 ****************/
 .contact__buttons {
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -493,8 +496,8 @@ section {
 ****************/
 .contact__buttons a {
   text-decoration: none;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -598,7 +601,7 @@ section {
 ***********************************************/
 .contact__form .form__input {
   border: 1px solid #eee;
-  transition: .3s border-color;
+  transition: 0.3s border-color;
   border-radius: 5px;
   width: 100%;
   max-width: 100%;
@@ -615,7 +618,7 @@ section {
 ****************************************************************/
 .contact__form .form__input:hover {
   border: 1px solid #aaa;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 /*********************************************
@@ -624,8 +627,8 @@ section {
 .contact__form .form__input:focus {
   border: 1px solid #007bb6;
   outline-color: #007bb6;
-  transition: .3s outline-color;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  transition: 0.3s outline-color;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 /*********************
@@ -829,7 +832,7 @@ section {
     transform: scaleX(1);
   }
 
-  .section__title {
+  .section__home .section__title {
     font-size: 4.5rem;
   }
 
