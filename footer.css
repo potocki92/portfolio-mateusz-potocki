@@ -1,0 +1,101 @@
+/* 
+=====================================
+          FOOTER MEDIA   
+=====================================
+*/
+/**********************************
+* footer with all media direction *
+**********************************/
+.contact__footer {
+    width: 100%;
+    padding: 10px 0px 15px 0px;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  /****************
+  * media buttons *
+  ****************/
+  .contact__buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /****************
+  * media achrons *
+  ****************/
+  .contact__buttons a {
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 25px;
+  }
+  
+  /**************
+  * media icons *
+  **************/
+  .contact__buttons a i {
+    position: relative;
+    z-index: 3;
+  }
+  
+  /****************
+  * facebook icon *
+  ****************/
+  .fb {
+    background-color: #3b5998;
+  }
+  
+  /**************
+  * twiter icon *
+  **************/
+  .tw {
+    background-color: #00aced;
+  }
+  
+  /****************
+  * linkedin icon *
+  ****************/
+  .in {
+    background-color: #007bb6;
+  }
+  
+  /* 
+  =====================================
+            FOOTER MEDIA
+              *EFFECTS* 
+  =====================================
+  */
+  
+  .contact__footer a {
+    transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s,
+      border-top-right-radius 0.1s linear 0.1s,
+      border-bottom-right-radius 0.1s linear 0.2s,
+      border-bottom-left-radius 0.1s linear 0.3s;
+  }
+  
+  .contact__footer a i {
+    transition: transform 0.4s linear 0s;
+  }
+  
+  .contact__footer a:hover {
+    transform: rotate(360deg);
+    border-radius: 50%;
+  }
+  
+  .contact__footer a:hover i {
+    transform: rotate(-360deg);
+  }
